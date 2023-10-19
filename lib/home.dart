@@ -10,7 +10,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final inputTextController = TextEditingController();
-  final outputTextController = Text
 
   @override
   void dispose() {
