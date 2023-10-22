@@ -24,7 +24,11 @@ class _RenderWidgetState extends State<RenderWidget> {
       child: Container(
           height: height / 2.4,
           width: width / 2.5,
-          child: HtmlWidget(renderText)),
+          child: SingleChildScrollView(
+              child: HtmlWidget(
+            renderText,
+            renderMode: RenderMode.listView,
+          ))),
     );
   }
 }
