@@ -1,4 +1,5 @@
 import 'package:decoder/decoder/base64.dart';
+import 'package:decoder/render.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -10,6 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final inputTextController = TextEditingController();
+  var decodedOutput = "Decoded Result will be available here";
 
   @override
   void dispose() {
@@ -21,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    String html = "WILL DO SOMETHING HERE LATER";
+
     return Scaffold(
       body: Center(
         // divide into two rows
@@ -46,33 +48,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 TextButton(
                     onPressed: () {
-                      print("PRESSED BUTTON");
                       var base64 = inputTextController.text;
-                      setState(() {
-                        html = decodeBase64String(base64);
-                        print("NEW HTML :" + html);
-                      });
+                      decodedOutput = decodeBase64String(base64);
+                      setState(() {});
                     },
                     child: Icon(Icons.play_circle))
               ],
             ),
           ),
-          // right sides
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          SizedBox(
             child: Container(
-              height: height / 2.4,
-              width: width / 2.5,
-              child: Text(html),
+              color: Colors.black,
+              width: 0.5,
             ),
-          )
+          ),
+          // right sides
+          RenderWidget(renderText: decodedOutput)
         ]),
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.clear),
+          child: Text("Clear"),
           onPressed: () {
-            print("PRESSED Floating button");
             inputTextController.clear();
+            setState(() {});
           }),
     );
   }
