@@ -6,6 +6,12 @@
 
 ### Flutter Generated
 
+.build/
+.firebase/
+.*/
+
+
+
 # Miscellaneous
 *.class
 *.lock
@@ -894,3 +900,11 @@ DerivedData/
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 linux/flutter/generated_plugin_registrant.cc
+.firebaserc
+.metadata
+pubspec.yaml
+.firebase/hosting.cHVibGlj.cache
+.firebase/hosting.YnVpbGRcd2Vi.cache
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugins.cmake
