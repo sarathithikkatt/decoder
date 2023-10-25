@@ -2,6 +2,7 @@
 *.cc
 *.cmake
 *.swift
+*.flutter-plugins-dependencies
 
 ### Flutter Generated
 
